@@ -11,7 +11,7 @@ namespace WebApi.Controllers.Api
     [ApiController]
     public class UserController : ControllerBase
     {
-        string ConnectionString = "Data Source=192.168.43.54;Initial Catalog=Test;User ID=ansibledb;Password=123123";
+        string ConnectionString = "Data Source=192.168.168.248;Initial Catalog=Test;User ID=ansibledb;Password=123123";
 
         [Route("GetUser")]
         [HttpGet]
