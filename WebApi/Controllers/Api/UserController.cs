@@ -12,6 +12,16 @@ namespace WebApi.Controllers.Api
     public class UserController : ControllerBase
     {
 
+        [Route("All")]
+        [HttpGet]
+        public IActionResult All()
+        {
+           
+
+            return Ok(new { All =  "mamad ", Status = "200" });
+        }
+
+
         [Route("GetUser")]
         [HttpGet]
         public IActionResult GetUser()
@@ -27,7 +37,7 @@ namespace WebApi.Controllers.Api
         {
             try
             {
-                string ConnectionString = "Data Source=.;Initial Catalog=Test;User ID=sa;Password=qwer@1234";
+                string ConnectionString = "Data Source=DESKTOP-O4L5GNP;Initial Catalog=Test;User ID=sa;Password=qwer@1234";
 
                 SqlConnection connection = new SqlConnection(ConnectionString);
                 SqlCommand cm = new SqlCommand("select * from Customers", connection);
