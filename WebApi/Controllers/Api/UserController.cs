@@ -11,7 +11,6 @@ namespace WebApi.Controllers.Api
     [ApiController]
     public class UserController : ControllerBase
     {
-        string ConnectionString = "Data Source=192.168.168.248;Initial Catalog=Test;User ID=ansibledb;Password=123123";
 
         [Route("GetUser")]
         [HttpGet]
@@ -26,18 +25,28 @@ namespace WebApi.Controllers.Api
         [HttpGet]
         public async Task<IActionResult> GetUserSql()
         {
-            SqlConnection connection = new SqlConnection(ConnectionString);
-            SqlCommand cm = new SqlCommand("select * from Customers", connection);
-            connection.Open();
-            SqlDataReader sdr = await cm.ExecuteReaderAsync();
-            var _Users = new List<string>();
-
-            while (sdr.Read())
+            try
             {
-                _Users.Add(sdr["FirstName"] + " " + sdr["LastName"]);
+                string ConnectionString = "Data Source=192.168.33.248,1433;Initial Catalog=Test;User ID=sa;Password=qwer@1234;TrustServerCertificate=True;MultipleActiveResultSets=true";
+
+                SqlConnection connection = new SqlConnection(ConnectionString);
+                SqlCommand cm = new SqlCommand("select * from Customers", connection);
+                connection.Open();
+                SqlDataReader sdr = await cm.ExecuteReaderAsync();
+                var _Users = new List<string>();
+
+                while (sdr.Read())
+                {
+                    _Users.Add(sdr["FirstName"] + " " + sdr["LastName"]);
+                }
+
+                return Ok(new { Users = _Users, Status = "200" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { Users = "", Status = "400" });
             }
 
-            return Ok(new { Users = _Users, Status = "200" });
         }
     }
 }
