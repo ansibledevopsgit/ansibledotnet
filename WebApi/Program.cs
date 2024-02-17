@@ -26,35 +26,18 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowOrigin",
         builder => builder
          
-          .WithOrigins("http://localhost:3000", "http://192.168.1.100")
+          .WithOrigins("http://localhost:3000")
           .AllowAnyMethod()
           .AllowAnyHeader()
           .AllowCredentials()
     .Build());
 });
 
-
+ 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = "ClinicBeauty Web API" });
-    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Description = "JWT Authorization ",
-        Name = "Authorization",
-        In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer"
-    });
-
-    options.AddSecurityRequirement(new OpenApiSecurityRequirement()
-         {
-             {
-               new OpenApiSecurityScheme {
-                   Reference = new OpenApiReference {Type=ReferenceType.SecurityScheme, Id="Bearer"},
-               }
-               ,new String[]{}
-            }
-      });
+    options.SwaggerDoc("v1", new OpenApiInfo { Version = "v1", Title = " docker test  Web API" });
+      
 });
 
  
@@ -62,15 +45,13 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+ 
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
-{
-    // app.UseSwagger();
-    // app.UseSwaggerUI();
+{ 
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "AsetCo Web API");
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", " docker Web API");
 
     });
 

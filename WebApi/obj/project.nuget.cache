@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "map5iEAIuq5x0EmesUZqa6o9fXhpudevyjIsj420PXkDiNEx6KYI5Lpwl/jRJI+mK5sVNCQapDi2o1LznxRMlQ==",
+  "dgSpecHash": "3Lt8Vdnc++SDR4eUy44dKYLDidGz0jEJ7ik0loCMICTb4IOiB90B23hC1UzMfGV71CpnFGYz7wicOm9hCX7CZw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rahimi\\Desktop\\ansible\\projeTest\\ansible-dotnet\\ansibledotnet\\ansibledotnet\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,7 @@
     "C:\\Users\\Rahimi\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Rahimi\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Rahimi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
-    "C:\\Users\\Rahimi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\Rahimi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\Rahimi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\Rahimi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "C:\\Users\\Rahimi\\.nuget\\packages\\system.data.sqlclient\\4.8.6\\system.data.sqlclient.4.8.6.nupkg.sha512",

@@ -16,8 +16,6 @@ namespace WebApi.Controllers.Api
         [HttpGet]
         public IActionResult All()
         {
-           
-
             return Ok(new { All =  "mamad ", Status = "200" });
         }
 
@@ -33,16 +31,16 @@ namespace WebApi.Controllers.Api
 
         [Route("GetUserSql")]
         [HttpGet]
-        public async Task<IActionResult> GetUserSql()
+        public IActionResult  GetUserSql()
         {
             try
             {
-                string ConnectionString = "Data Source=DESKTOP-O4L5GNP;Initial Catalog=Test;User ID=sa;Password=qwer@1234";
+                string ConnectionString = "Data Source=192.168.33.248;Initial Catalog=Test;User ID=sa;Password=qwer@1234";
 
                 SqlConnection connection = new SqlConnection(ConnectionString);
                 SqlCommand cm = new SqlCommand("select * from Customers", connection);
                 connection.Open();
-                SqlDataReader sdr = await cm.ExecuteReaderAsync();
+                SqlDataReader sdr =  cm.ExecuteReader();
                 var _Users = new List<string>();
 
                 while (sdr.Read())
@@ -54,7 +52,7 @@ namespace WebApi.Controllers.Api
             }
             catch (Exception ex)
             {
-                return Ok(new { Users = "", Status = "400" });
+                return Ok(new { Users = ex.ToString(), Status = "400" });
             }
 
         }
