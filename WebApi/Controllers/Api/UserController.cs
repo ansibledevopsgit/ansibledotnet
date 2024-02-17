@@ -27,7 +27,7 @@ namespace WebApi.Controllers.Api
         {
             try
             {
-                string ConnectionString = "Data Source=192.168.33.248,1433;Initial Catalog=Test;User ID=sa;Password=qwer@1234;TrustServerCertificate=True;MultipleActiveResultSets=true";
+                string ConnectionString = "Data Source=.;Initial Catalog=Test;User ID=sa;Password=qwer@1234";
 
                 SqlConnection connection = new SqlConnection(ConnectionString);
                 SqlCommand cm = new SqlCommand("select * from Customers", connection);
