@@ -24,7 +24,7 @@ namespace WebApi.Controllers.Api
         [HttpGet]
         public IActionResult All()
         {
-            return Ok(new { All = "mamad raei ", Status = "200" });
+            return Ok(new { All = "mamad rahimi ", Status = "200" });
         }
 
 
@@ -32,7 +32,7 @@ namespace WebApi.Controllers.Api
         [HttpGet]
         public IActionResult GetUser()
         {
-            var _User = new { FirstName = "Mohammad", LastName = "Rahimi" };
+            var _User = new { FirstName = "Ali", LastName = "Rahimi" };
 
             return Ok(new { User = _User, Status = "200" });
         }
