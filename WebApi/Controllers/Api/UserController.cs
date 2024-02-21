@@ -24,7 +24,7 @@ namespace WebApi.Controllers.Api
         [HttpGet]
         public IActionResult All()
         {
-            return Ok(new { All = "mamad ", Status = "200" });
+            return Ok(new { All = "mamad raei ", Status = "200" });
         }
 
 
