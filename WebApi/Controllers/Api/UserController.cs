@@ -1,8 +1,13 @@
 ﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
+
 using System.Data;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
 
 namespace WebApi.Controllers.Api
 {
@@ -12,11 +17,14 @@ namespace WebApi.Controllers.Api
     public class UserController : ControllerBase
     {
 
+        private readonly IConfiguration _Configuration;
+        public UserController(IConfiguration Configuration) { _Configuration = Configuration; }
+
         [Route("All")]
         [HttpGet]
         public IActionResult All()
         {
-            return Ok(new { All =  "mamad ", Status = "200" });
+            return Ok(new { All = "mamad ", Status = "200" });
         }
 
 
@@ -31,16 +39,16 @@ namespace WebApi.Controllers.Api
 
         [Route("GetUserSql")]
         [HttpGet]
-        public IActionResult  GetUserSql()
+        public IActionResult GetUserSql()
         {
             try
             {
-                string ConnectionString = "Data Source=192.168.33.248;Initial Catalog=Test;User ID=sa;Password=qwer@1234";
+                string ConnectionString = _Configuration.GetConnectionString("DbAnsible")!;
 
                 SqlConnection connection = new SqlConnection(ConnectionString);
                 SqlCommand cm = new SqlCommand("select * from Customers", connection);
                 connection.Open();
-                SqlDataReader sdr =  cm.ExecuteReader();
+                SqlDataReader sdr = cm.ExecuteReader();
                 var _Users = new List<string>();
 
                 while (sdr.Read())
