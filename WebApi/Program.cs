@@ -26,7 +26,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowOrigin",
         builder => builder
          
-          .WithOrigins("http://localhost:3000", "http://yaser.com:8080", "http://yaser.com", "https://yaser.com:8080", "https://yaser.com")
+          .WithOrigins("http://localhost:3000")
           .AllowAnyMethod()
           .AllowAnyHeader()
           .AllowCredentials()
