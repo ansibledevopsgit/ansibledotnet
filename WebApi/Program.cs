@@ -1,32 +1,20 @@
-
-using System.Text;
+ 
  
 using Microsoft.OpenApi.Models;
  
-using Microsoft.AspNetCore.Http.Features;
- 
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using System;
-
+  
 var builder = WebApplication.CreateBuilder(args);
-
  
-
 
 builder.Services.AddControllers();
 
- 
-
-
+  
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowOrigin",
         builder => builder
          
-          .WithOrigins("http://localhost:3000", "http://109.122.224.141:3000", "http://192.168.1.103:3000", "http://localhost:80/api", "http://109.122.224.141:80/api", "http://192.168.1.103:80/api")
+          .WithOrigins("http://localhost:3000")
           .AllowAnyMethod()
           .AllowAnyHeader()
           .AllowCredentials()

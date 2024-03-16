@@ -12,6 +12,8 @@ COPY  WebApi/.   ./WebApi/
 WORKDIR /dotnet/WebApi
 RUN dotnet  publish  WebApi.csproj -c release     -o /out/
 
+EXPOSE 4000
+
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /out
