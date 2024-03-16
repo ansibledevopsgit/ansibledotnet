@@ -1,6 +1,8 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /dotnet
 
+EXPOSE 4000
+
 # copy csproj and restore as distinct layers
 COPY  *.sln .
 
@@ -19,6 +21,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /out
 COPY --from=build /out ./
 
-EXPOSE 4000
+ENV ASPNETCORE_URLS=http://+:4000
 
 ENTRYPOINT ["dotnet", "WebApi.dll"]
